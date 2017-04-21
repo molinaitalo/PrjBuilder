@@ -5,6 +5,8 @@
  */
 package prjbuilder;
 
+import janelas.home;
+
 /**
  *
  * @author aluno
@@ -16,6 +18,8 @@ public class PrjBuilder {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        home home = new home();
+        home.setVisible(true);
     }
     
 }
