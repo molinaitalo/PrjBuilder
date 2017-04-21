@@ -15,8 +15,8 @@ public class home extends javax.swing.JFrame {
      * Creates new form home
      */
     public home() {
-        initComponents();
-    }
+        
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +29,7 @@ public class home extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuListagem = new javax.swing.JMenu();
@@ -39,17 +40,44 @@ public class home extends javax.swing.JFrame {
 
         jMenu2.setText("jMenu2");
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elementosGraficos/Cake Land.png"))); // NOI18N
 
         jMenuListagem.setText("Listagem");
+        jMenuListagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuListagemActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenuListagem);
 
         jMenuCadastro.setText("Cadastro");
+        jMenuCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuCadastroActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenuCadastro);
 
         jMenuSobre.setText("Sobre");
+        jMenuSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSobreActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenuSobre);
 
         setJMenuBar(jMenuBar1);
@@ -73,6 +101,33 @@ public class home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuListagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListagemActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new listagem().setModal(true);
+                new listagem().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jMenuListagemActionPerformed
+
+    private void jMenuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCadastroActionPerformed
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new cadastro().setModal(true);
+                new cadastro().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jMenuCadastroActionPerformed
+
+    private void jMenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSobreActionPerformed
+                java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new sobre().setModal(true);
+                new sobre().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jMenuSobreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,6 +165,7 @@ public class home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
