@@ -9,24 +9,23 @@ package janelas;
  *
  * @author Matheus
  */
-public class cadastro extends javax.swing.JInternalFrame {
+public class sobre extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form cadastro
+     * Creates new form sobre
      */
-    private static cadastro cad;
+    private static sobre sob;
     
-    public static cadastro newcadastro()    
+    public static sobre newsob()    
     {
-        if (cad == null)
+        if (sob == null)
         {
-            cad = new cadastro();
+            sob = new sobre();
         }
         
-        return cad;   
+        return sob;   
     }
-    
-    public cadastro() {
+    public sobre() {
         initComponents();
     }
 
@@ -40,7 +39,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         setClosable(true);
-        setTitle("Cadastro de Produtos");
+        setTitle("Sobre");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
