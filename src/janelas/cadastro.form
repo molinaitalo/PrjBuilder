@@ -33,13 +33,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="243" pref="243" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblListaIngrd2" min="-2" pref="279" max="-2" attributes="0"/>
-                  <Component id="lblProduto" min="-2" pref="279" max="-2" attributes="0"/>
-                  <Component id="txtProduto" min="-2" pref="279" max="-2" attributes="0"/>
-                  <Component id="lblIngrd1" min="-2" pref="279" max="-2" attributes="0"/>
-                  <Component id="txtIngrd" min="-2" pref="279" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lblListaIngrd2" max="32767" attributes="0"/>
+                  <Component id="lblProduto" max="32767" attributes="0"/>
+                  <Component id="txtProduto" max="32767" attributes="0"/>
+                  <Component id="lblIngrd1" max="32767" attributes="0"/>
+                  <Component id="txtIngrd" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="btnAdicionar" min="-2" pref="89" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -47,33 +47,33 @@
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="btnSalvar" min="-2" pref="89" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="293" max="32767" attributes="0"/>
+              <EmptySpace pref="202" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="lblProduto" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="txtProduto" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Component id="lblIngrd1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="txtIngrd" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnAdicionar" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="btnLimpar" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="btnSalvar" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="lblListaIngrd2" min="-2" pref="15" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="213" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="173" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>

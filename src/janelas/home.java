@@ -51,6 +51,9 @@ public class home extends javax.swing.JFrame {
         setFocusableWindowState(false);
         setResizable(false);
 
+        jDPHome.setMaximumSize(new java.awt.Dimension(797, 474));
+        jDPHome.setMinimumSize(new java.awt.Dimension(797, 474));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elementosGraficos/Cake Land.png"))); // NOI18N
 
         jDPHome.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -119,11 +122,11 @@ public class home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPHome)
+            .addComponent(jDPHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPHome)
+            .addComponent(jDPHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

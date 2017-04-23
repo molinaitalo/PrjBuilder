@@ -96,6 +96,14 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="jDPHome">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[797, 474]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[797, 474]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
