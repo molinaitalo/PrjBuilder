@@ -43,20 +43,20 @@ public class listagem extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Listagem de Produtos");
-        setMaximumSize(new java.awt.Dimension(740, 440));
-        setMinimumSize(new java.awt.Dimension(740, 440));
-        setPreferredSize(new java.awt.Dimension(740, 440));
+        setMaximumSize(new java.awt.Dimension(800, 470));
+        setMinimumSize(new java.awt.Dimension(800, 470));
+        setPreferredSize(new java.awt.Dimension(800, 470));
         setVisible(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 724, Short.MAX_VALUE)
+            .addGap(0, 784, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         pack();
