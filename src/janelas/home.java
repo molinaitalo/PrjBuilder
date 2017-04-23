@@ -135,7 +135,9 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //Implementação da técnica Singleton para exclusividade de abertura do formulário cadastro        
         cadastro jIFcad = cadastro.newcadastro();
+        //Para evitar erros, utiliza-se um if para evitar a adição redundante de elementos no jDesktopPanel 
         if (jIFcad.isVisible())
         {            
         }
@@ -143,7 +145,8 @@ public class home extends javax.swing.JFrame {
         {
             jDPHome.add(jIFcad);
             jIFcad.setVisible(true);
-            try {       
+            try {    
+                    //Maximizar formulário no jDesktopPanel
                     jIFcad.setMaximum(true);
                 } catch (PropertyVetoException ex) {
                     Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
@@ -153,7 +156,9 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        //Implementação da técnica Singleton para exclusividade de abertura do formulário listagem        
         listagem jIFlist = listagem.newlist();
+        //Para evitar erros, utiliza-se um if para evitar a adição redundante de elementos no jDesktopPanel 
         if (jIFlist.isVisible())
         {            
         }
@@ -161,7 +166,8 @@ public class home extends javax.swing.JFrame {
         {
             jDPHome.add(jIFlist);
             jIFlist.setVisible(true);
-            try {       
+            try {   
+                    //Maximizar formulário no jDesktopPanel   
                     jIFlist.setMaximum(true);
                 } catch (PropertyVetoException ex) {
                     Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,7 +177,9 @@ public class home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        //Implementação da técnica Singleton para exclusividade de abertura do formulário sobre        
         sobre jIFsob = sobre.newsob();
+        //Para evitar erros, utiliza-se um if para evitar a adição redundante de elementos no jDesktopPanel 
         if (jIFsob.isVisible())
         {
         }
@@ -180,6 +188,7 @@ public class home extends javax.swing.JFrame {
             jDPHome.add(jIFsob);
             jIFsob.setVisible(true);
             try {       
+                    //Maximizar formulário no jDesktopPanel    
                     jIFsob.setMaximum(true);
                 } catch (PropertyVetoException ex) {
                     Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);

@@ -14,6 +14,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     /**
      * Creates new form cadastro
      */
+    //Parte da técnica Singleton. Apoia a exclusividade de exibição/execução do formulário.
     private static cadastro cad;
     
     public static cadastro newcadastro()    
@@ -39,18 +40,91 @@ public class cadastro extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaIngrd = new javax.swing.JList<>();
+        lblListaIngrd2 = new javax.swing.JLabel();
+        btnAdicionar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
+        txtIngrd = new java.awt.TextField();
+        lblIngrd1 = new javax.swing.JLabel();
+        lblProduto = new javax.swing.JLabel();
+        txtProduto = new java.awt.TextField();
+
         setClosable(true);
         setTitle("Cadastro de Produtos");
+        setMaximumSize(new java.awt.Dimension(740, 440));
+        setMinimumSize(new java.awt.Dimension(740, 440));
+        setPreferredSize(new java.awt.Dimension(740, 440));
+
+        listaIngrd.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(listaIngrd);
+
+        lblListaIngrd2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblListaIngrd2.setText("Lista de Ingredientes");
+
+        btnAdicionar.setText("Adicionar");
+
+        btnLimpar.setText("Limpar Lista");
+
+        btnSalvar.setText("Salvar");
+
+        txtIngrd.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        lblIngrd1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIngrd1.setText("Adicionar Ingrediente");
+
+        lblProduto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProduto.setText("Nome do Produto");
+
+        txtProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 764, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(243, 243, 243)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIngrd1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIngrd, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnLimpar)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblProduto)
+                .addGap(14, 14, 14)
+                .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(lblIngrd1)
+                .addGap(14, 14, 14)
+                .addComponent(txtIngrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -58,5 +132,15 @@ public class cadastro extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblIngrd1;
+    private javax.swing.JLabel lblListaIngrd2;
+    private javax.swing.JLabel lblProduto;
+    private javax.swing.JList<String> listaIngrd;
+    private java.awt.TextField txtIngrd;
+    private java.awt.TextField txtProduto;
     // End of variables declaration//GEN-END:variables
 }

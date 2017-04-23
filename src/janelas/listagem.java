@@ -14,6 +14,7 @@ public class listagem extends javax.swing.JInternalFrame {
     /**
      * Creates new form listagem
      */
+    //Parte da técnica Singleton. Apoia a exclusividade de exibição/execução do formulário.
     private static listagem list;
     
     public static listagem newlist()    
@@ -28,6 +29,8 @@ public class listagem extends javax.swing.JInternalFrame {
     public listagem() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,17 +43,20 @@ public class listagem extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Listagem de Produtos");
+        setMaximumSize(new java.awt.Dimension(740, 440));
+        setMinimumSize(new java.awt.Dimension(740, 440));
+        setPreferredSize(new java.awt.Dimension(740, 440));
         setVisible(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 764, Short.MAX_VALUE)
+            .addGap(0, 724, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 454, Short.MAX_VALUE)
+            .addGap(0, 410, Short.MAX_VALUE)
         );
 
         pack();
