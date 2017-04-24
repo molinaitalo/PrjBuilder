@@ -95,6 +95,7 @@ public class cadastro extends javax.swing.JInternalFrame {
         lblProduto.setText("Nome do Produto");
 
         txtProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtProduto.setName(""); // NOI18N
 
         jInternalFrame1.setClosable(true);
         jInternalFrame1.setTitle("Cadastro de Produtos");

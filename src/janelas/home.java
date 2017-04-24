@@ -47,12 +47,10 @@ public class home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cake Land");
         setBackground(new java.awt.Color(255, 255, 255));
-        setFocusable(false);
-        setFocusableWindowState(false);
         setResizable(false);
 
-        jDPHome.setMaximumSize(new java.awt.Dimension(797, 474));
-        jDPHome.setMinimumSize(new java.awt.Dimension(797, 474));
+        jDPHome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jDPHome.setFocusable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/elementosGraficos/Cake Land.png"))); // NOI18N
 
@@ -122,11 +120,11 @@ public class home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDPHome)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDPHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jDPHome)
         );
 
         pack();
