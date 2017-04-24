@@ -12,5 +12,19 @@ package objetos;
 public class BoloIngredientes {
     
     private String ingrediente;
+    private double valor;
     
+    public BoloIngredientes (String ingrediente, double valor)
+    {
+        this.ingrediente = ingrediente;
+        this.valor = valor;
+    }
+
+    public String getIngrediente() {
+        return ingrediente;
+    }
+
+    public double getValor() {
+        return valor;
+    }
 }

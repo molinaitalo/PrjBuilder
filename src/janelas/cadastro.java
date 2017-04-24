@@ -5,6 +5,12 @@
  */
 package janelas;
 
+import java.util.ArrayList;
+import objetos.Bolo;
+import objetos.BoloDiretor;
+import objetos.BoloIngredientes;
+import objetosBO.BoloBO;
+
 /**
  *
  * @author Matheus
@@ -17,6 +23,8 @@ public class cadastro extends javax.swing.JInternalFrame {
     //Parte da técnica Singleton. Apoia a exclusividade de exibição/execução do formulário.
     private static cadastro cad;
     
+    BoloDiretor builder = new BoloDiretor();
+            
     public static cadastro newcadastro()    
     {
         if (cad == null)
@@ -29,6 +37,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     
     public cadastro() {
         initComponents();
+        txtIngredientes.setText("Ingrediente | Valor(R$)\n");
     }
 
     /**
@@ -40,8 +49,6 @@ public class cadastro extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listaIngrd = new javax.swing.JList<>();
         lblListaIngrd2 = new javax.swing.JLabel();
         btnAdicionar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
@@ -63,6 +70,12 @@ public class cadastro extends javax.swing.JInternalFrame {
         txtProduto1 = new java.awt.TextField();
         txtPreco = new java.awt.TextField();
         lblPreco = new javax.swing.JLabel();
+        txtIngrdValor = new java.awt.TextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblPreco1 = new javax.swing.JLabel();
+        txtTamanho = new java.awt.TextField();
+        txtIngredientes = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Cadastro de Produtos");
@@ -70,23 +83,31 @@ public class cadastro extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(800, 470));
         setPreferredSize(new java.awt.Dimension(800, 470));
 
-        listaIngrd.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listaIngrd);
-
         lblListaIngrd2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblListaIngrd2.setText("Lista de Ingredientes");
 
         btnAdicionar.setText("Adicionar");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setText("Limpar Lista");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
-        txtIngrd.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtIngrd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblIngrd1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngrd1.setText("Adicionar Ingrediente");
@@ -94,7 +115,7 @@ public class cadastro extends javax.swing.JInternalFrame {
         lblProduto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProduto.setText("Nome do Produto");
 
-        txtProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtProduto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtProduto.setName(""); // NOI18N
 
         jInternalFrame1.setClosable(true);
@@ -119,7 +140,7 @@ public class cadastro extends javax.swing.JInternalFrame {
 
         btnSalvar1.setText("Salvar");
 
-        txtIngrd1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtIngrd1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblIngrd2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngrd2.setText("Adicionar Ingrediente");
@@ -127,7 +148,7 @@ public class cadastro extends javax.swing.JInternalFrame {
         lblProduto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblProduto1.setText("Nome do Produto");
 
-        txtProduto1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtProduto1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -173,33 +194,52 @@ public class cadastro extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        txtPreco.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtPreco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblPreco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPreco.setText("Preço");
+        lblPreco.setText("Tamanho");
+
+        txtIngrdValor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel1.setText("Ingrediente:");
+
+        jLabel2.setText("Valor:");
+
+        lblPreco1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPreco1.setText("Preço");
+
+        txtTamanho.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(243, 243, 243)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtIngredientes)
+                    .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblListaIngrd2, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIngrd1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPreco, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPreco, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                    .addComponent(txtProduto, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblProduto, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtIngrdValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtIngrd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(txtTamanho, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPreco1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
                         .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(btnLimpar)
-                        .addGap(6, 6, 6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtIngrd, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIngrd1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.Alignment.CENTER))
                 .addGap(233, 233, 233))
         );
         layout.setVerticalGroup(
@@ -207,33 +247,75 @@ public class cadastro extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(lblProduto)
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPreco)
-                .addGap(14, 14, 14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(lblPreco1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblIngrd1)
-                .addGap(14, 14, 14)
-                .addComponent(txtIngrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(54, 54, 54)
                         .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtIngrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtIngrdValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtIngredientes, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        builder.id(0);
+        builder.descricao(txtProduto.getText());
+        builder.tamanho(txtTamanho.getText());
+        
+        Bolo bolo = builder.constroi();
+        
+        BoloBO boloBo = new BoloBO();
+        boloBo.salvar(bolo);
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        //Incluir no array de ingredientes do builder
+        builder.ingrediente(new BoloIngredientes(txtIngrd.getText(), Double.valueOf(txtIngrdValor.getText())));
+        //Modificar valor no form
+        txtPreco.setText(String.valueOf(Double.valueOf(txtPreco.getText()) + Double.valueOf(txtIngrdValor.getText())));
+        //Incluir na lista do form
+        txtIngredientes.setText(txtIngredientes.getText() + txtPreco.getText() + " | " + txtIngrdValor.getText()+ "\n");
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        //Limpar array de ingredientes do builder
+        
+        //Zerar valor no form
+        
+        //Zerar lista do form
+        txtIngredientes.setText("Ingrediente | Valor(R$)\n");
+    }//GEN-LAST:event_btnLimparActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -244,21 +326,25 @@ public class cadastro extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnSalvar1;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIngrd1;
     private javax.swing.JLabel lblIngrd2;
     private javax.swing.JLabel lblListaIngrd2;
     private javax.swing.JLabel lblListaIngrd3;
     private javax.swing.JLabel lblPreco;
+    private javax.swing.JLabel lblPreco1;
     private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel lblProduto1;
-    private javax.swing.JList<String> listaIngrd;
     private javax.swing.JList<String> listaIngrd1;
     private java.awt.TextField txtIngrd;
     private java.awt.TextField txtIngrd1;
+    private java.awt.TextField txtIngrdValor;
+    private javax.swing.JTextField txtIngredientes;
     private java.awt.TextField txtPreco;
     private java.awt.TextField txtProduto;
     private java.awt.TextField txtProduto1;
+    private java.awt.TextField txtTamanho;
     // End of variables declaration//GEN-END:variables
 }

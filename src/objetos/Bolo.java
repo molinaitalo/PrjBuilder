@@ -5,6 +5,8 @@
  */
 package objetos;
 
+import java.util.List;
+
 /**
  *
  * @author lenovo
@@ -15,40 +17,38 @@ public class Bolo {
     private String tamanho;
     private double preco;
     private String descricao;
+    public List<BoloIngredientes> ingredientes;
+    
+    public Bolo(int id, String tamanho, double preco, String descricao, List<BoloIngredientes> ingredientes)
+    {
+        this.id = id;
+        this.tamanho = tamanho;
+        this.preco = preco;
+        this.descricao = descricao;
+        this.ingredientes = ingredientes;
+    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTamanho() {
         return tamanho;
     }
 
-    public void setTamanho(String tamanho) {
-        this.tamanho = tamanho;
-    }
 
     public double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
 
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+
+    public List<BoloIngredientes> getIngredientes() {
+        return ingredientes;
     }
-    
-    
-    
-    
 }
