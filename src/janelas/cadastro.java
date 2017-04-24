@@ -38,6 +38,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     public cadastro() {
         initComponents();
         txtIngredientes.setText("Ingrediente | Valor(R$)\n");
+        txtPreco.setText("0.00");
     }
 
     /**
@@ -75,7 +76,8 @@ public class cadastro extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         lblPreco1 = new javax.swing.JLabel();
         txtTamanho = new java.awt.TextField();
-        txtIngredientes = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtIngredientes = new javax.swing.JTextArea();
 
         setClosable(true);
         setTitle("Cadastro de Produtos");
@@ -195,6 +197,7 @@ public class cadastro extends javax.swing.JInternalFrame {
         );
 
         txtPreco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtPreco.setEditable(false);
 
         lblPreco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPreco.setText("Tamanho");
@@ -210,6 +213,11 @@ public class cadastro extends javax.swing.JInternalFrame {
 
         txtTamanho.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        txtIngredientes.setEditable(false);
+        txtIngredientes.setColumns(20);
+        txtIngredientes.setRows(5);
+        jScrollPane1.setViewportView(txtIngredientes);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -217,7 +225,7 @@ public class cadastro extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(243, 243, 243)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtIngredientes)
+                    .addComponent(jScrollPane1)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblListaIngrd2, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIngrd1, javax.swing.GroupLayout.Alignment.CENTER, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,7 +290,8 @@ public class cadastro extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblListaIngrd2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIngredientes, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -295,8 +304,22 @@ public class cadastro extends javax.swing.JInternalFrame {
         
         Bolo bolo = builder.constroi();
         
-        BoloBO boloBo = new BoloBO();
-        boloBo.salvar(bolo);
+        //BoloBO boloBo = new BoloBO();
+        //boloBo.salvar(bolo);
+        
+        //Impressão do objeto construído no console
+        int i;
+        
+        System.out.println("Id: " + bolo.getId());
+        System.out.println("Descrição:" + bolo.getDescricao());
+        System.out.println("Tamanho: " + bolo.getTamanho());
+        System.out.println("Preço: " + bolo.getPreco());
+        System.out.println("Ingredientes: ");
+        
+        for (i=0; i< bolo.ingredientes.size(); i++) {
+            BoloIngredientes ing = bolo.ingredientes.get(i);
+            System.out.println(ing.getIngrediente());
+	}
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
@@ -305,14 +328,14 @@ public class cadastro extends javax.swing.JInternalFrame {
         //Modificar valor no form
         txtPreco.setText(String.valueOf(Double.valueOf(txtPreco.getText()) + Double.valueOf(txtIngrdValor.getText())));
         //Incluir na lista do form
-        txtIngredientes.setText(txtIngredientes.getText() + txtPreco.getText() + " | " + txtIngrdValor.getText()+ "\n");
+        txtIngredientes.setText(txtIngredientes.getText() + txtIngrd.getText() + " | " + txtIngrdValor.getText()+ "\n");
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         //Limpar array de ingredientes do builder
-        
+        builder.todosIngredientes.clear();
         //Zerar valor no form
-        
+        txtPreco.setText("0.00");
         //Zerar lista do form
         txtIngredientes.setText("Ingrediente | Valor(R$)\n");
     }//GEN-LAST:event_btnLimparActionPerformed
@@ -328,6 +351,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIngrd1;
     private javax.swing.JLabel lblIngrd2;
@@ -341,7 +365,7 @@ public class cadastro extends javax.swing.JInternalFrame {
     private java.awt.TextField txtIngrd;
     private java.awt.TextField txtIngrd1;
     private java.awt.TextField txtIngrdValor;
-    private javax.swing.JTextField txtIngredientes;
+    private javax.swing.JTextArea txtIngredientes;
     private java.awt.TextField txtPreco;
     private java.awt.TextField txtProduto;
     private java.awt.TextField txtProduto1;
