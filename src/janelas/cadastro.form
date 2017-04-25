@@ -32,58 +32,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="133" pref="130" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Group type="102" alignment="2" attributes="0">
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="txtPrecoCusto" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtLucro" min="-2" pref="46" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtPrecoTotal" min="-2" pref="41" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="2" attributes="0">
-                          <Group type="102" alignment="2" attributes="0">
-                              <Group type="103" groupAlignment="2" attributes="0">
-                                  <Component id="lblProduto" alignment="2" max="32767" attributes="0"/>
-                                  <Component id="txtProduto" alignment="2" min="-2" pref="280" max="-2" attributes="0"/>
-                                  <Component id="lblPreco" alignment="2" max="32767" attributes="0"/>
-                                  <Component id="txtTamanho" alignment="2" min="-2" pref="280" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtIngrd" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="jLabel2" min="-2" pref="38" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="10" attributes="0"/>
-                                      <Component id="txtIngrdValor" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="btnLimpar" alignment="2" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="2" attributes="0">
-                                      <Component id="btnAdicionar" min="-2" pref="89" max="-2" attributes="0"/>
-                                      <EmptySpace min="237" pref="237" max="237" attributes="0"/>
-                                      <Component id="btnSalvar" min="-2" pref="89" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="jInternalFrame1" min="-2" pref="0" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane1" alignment="2" max="32767" attributes="0"/>
-                          <Component id="lblListaIngrd2" alignment="2" max="32767" attributes="0"/>
-                          <Component id="lblIngrd1" alignment="2" max="32767" attributes="0"/>
-                          <Component id="lblPreco1" alignment="2" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                  </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="243" pref="243" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jInternalFrame1" alignment="2" min="-2" pref="0" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIngrd" alignment="2" max="32767" attributes="0"/>
+                  <Component id="lblPreco1" alignment="2" pref="314" max="32767" attributes="0"/>
+                  <Component id="txtPrecoCusto" alignment="2" min="-2" pref="163" max="-2" attributes="0"/>
+                  <Component id="lblPreco" alignment="1" pref="314" max="32767" attributes="0"/>
+                  <Component id="txtProduto" alignment="2" min="-2" pref="279" max="-2" attributes="0"/>
+                  <Component id="lblProduto" alignment="2" min="-2" pref="307" max="-2" attributes="0"/>
+                  <Component id="txtTamanho" alignment="2" min="-2" pref="163" max="-2" attributes="0"/>
+                  <Component id="btnSalvar" alignment="2" min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,84 +61,24 @@
               <Component id="lblPreco" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="txtTamanho" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="txtIngrd" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="lblPreco1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="txtPrecoCusto" max="32767" attributes="0"/>
-                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="txtLucro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="txtPrecoTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="lblIngrd1" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="jInternalFrame1" min="-2" pref="0" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtIngrd" max="32767" attributes="0"/>
-                          <Component id="jLabel1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtIngrdValor" max="32767" attributes="0"/>
-                          <Component id="jLabel2" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAdicionar" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="btnSalvar" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnLimpar" min="-2" pref="39" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-              <Component id="lblListaIngrd2" min="-2" pref="15" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="23" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="txtPrecoCusto" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="jInternalFrame1" min="-2" pref="0" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+              <Component id="btnSalvar" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace pref="39" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lblListaIngrd2">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Lista de Ingredientes"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnAdicionar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Adicionar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdicionarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnLimpar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limpar Lista"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnSalvar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salvar"/>
@@ -189,12 +92,6 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor Padr&#xe3;o"/>
         </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblIngrd1">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Adicionar Ingrediente"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblProduto">
@@ -356,7 +253,6 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor Padr&#xe3;o"/>
         </Property>
-        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPreco">
@@ -365,27 +261,15 @@
         <Property name="text" type="java.lang.String" value="Tamanho"/>
       </Properties>
     </Component>
-    <Component class="java.awt.TextField" name="txtIngrdValor">
-      <Properties>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Cursor Padr&#xe3;o"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ingrediente:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Valor:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblPreco1">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
+        <Property name="text" type="java.lang.String" value="Pre&#xe7;o ingrediente:"/>
       </Properties>
     </Component>
     <Component class="java.awt.TextField" name="txtTamanho">
@@ -393,47 +277,6 @@
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor Padr&#xe3;o"/>
         </Property>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtIngredientes">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pre&#xe7;o de Custo:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="+ Lucro (R$):"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtLucro">
-      <Events>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtLucroFocusLost"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="= Pre&#xe7;o Total: "/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtPrecoTotal">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
   </SubComponents>

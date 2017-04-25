@@ -15,9 +15,10 @@ import java.util.List;
 public class BoloDiretor {
     private int id;
     private String tamanho;
-    private double preco;
+    private double precoIngr;
     private String descricao;
-    public List<BoloIngredientes> todosIngredientes = new ArrayList<BoloIngredientes>();
+    public String ingrediente;
+    public double precoBolo;
     
     public void id(int id)
     {
@@ -29,9 +30,9 @@ public class BoloDiretor {
         this.tamanho = tamanho;
     }
     
-    public void preco(double preco)
+    public void precoIngr(double precoIngr)
     {
-        this.preco = preco;
+        this.precoIngr = precoIngr;
     }
     
     public void descricao(String descricao)
@@ -39,13 +40,15 @@ public class BoloDiretor {
         this.descricao = descricao;
     }
     
-    public void ingrediente(BoloIngredientes ingrediente) {
-        todosIngredientes.add(ingrediente);
-        preco += ingrediente.getValor();
+    public void ingrediente(String ingrediente) {
+        this.ingrediente = ingrediente;
     }
-    
+    public void precoBolo(double precoBolo)
+    {
+        this.precoBolo = precoBolo;
+    }
     public Bolo constroi()
     {
-        return new Bolo(id, tamanho, preco, descricao, todosIngredientes);
+        return new Bolo(id, tamanho, precoIngr, descricao, ingrediente,precoBolo);
     }
 }

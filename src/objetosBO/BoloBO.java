@@ -5,7 +5,10 @@
  */
 package objetosBO;
 
+import java.util.List;
 import objetos.Bolo;
+import objetos.BoloDiretor;
+
 import objetosDAO.BoloDAO;
 
 /**
@@ -21,7 +24,16 @@ public class BoloBO {
     }
     
     public void salvar(Bolo bolo)
+            
     {
+        
         boloDAO.salvar(bolo);
     }
+    
+    
+    public List<Bolo> buscarTodos()
+    {
+       return boloDAO.buscarTodos();
+    }
+    
 }

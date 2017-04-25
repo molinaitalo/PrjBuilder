@@ -15,19 +15,23 @@ public class Bolo {
     
     private int id;
     private String tamanho;
-    private double preco;
+    private double precoIngr;
     private String descricao;
-    public List<BoloIngredientes> ingredientes;
-    
-    public Bolo(int id, String tamanho, double preco, String descricao, List<BoloIngredientes> ingredientes)
+    private String ingrediente;
+    private double precoBolo;
+    public Bolo(int id, String tamanho, double precoIngr, String descricao, String ingrediente,double precoBolo)
     {
         this.id = id;
         this.tamanho = tamanho;
-        this.preco = preco;
+        this.precoIngr = precoIngr;
         this.descricao = descricao;
-        this.ingredientes = ingredientes;
+        this.ingrediente = ingrediente;
+        this.precoBolo = precoBolo;
     }
-
+    public Bolo()
+    {
+        
+    }
     public int getId() {
         return id;
     }
@@ -38,8 +42,8 @@ public class Bolo {
     }
 
 
-    public double getPreco() {
-        return preco;
+    public double getPrecoIngr() {
+        return precoIngr;
     }
 
 
@@ -48,7 +52,38 @@ public class Bolo {
     }
 
 
-    public List<BoloIngredientes> getIngredientes() {
-        return ingredientes;
+    public String getIngrediente() {
+        return ingrediente;
     }
+    
+    public double getPrecoBolo()
+    {
+        return precoBolo;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public void setPrecoIngr(double precoIngr) {
+        this.precoIngr = precoIngr;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setIngrediente(String ingrediente) {
+        this.ingrediente = ingrediente;
+    }
+
+    public void setPrecoBolo(double precoBolo) {
+        this.precoBolo = precoBolo;
+    }
+    
+    
 }

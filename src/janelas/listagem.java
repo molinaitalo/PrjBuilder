@@ -5,12 +5,39 @@
  */
 package janelas;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+import objetos.Bolo;
+import objetosBO.BoloBO;
+
 /**
  *
  * @author Matheus
  */
 public class listagem extends javax.swing.JInternalFrame {
-
+    List<Bolo> lstB = new LinkedList<>();
+    public void preencherCombo()
+    {
+            Bolo b = new Bolo();
+            lstB = new BoloBO().buscarTodos();
+            
+            ListIterator<Bolo> lstiB = lstB.listIterator();
+            cmbBolos.removeAllItems();
+            while(lstiB.hasNext())
+            {
+                b = lstiB.next();
+                cmbBolos.addItem(b.getDescricao());
+            }            
+        
+       /* else
+        {
+            cmbDescricao.removeAllItems();
+            LimparCampos();
+            
+        }
+            */
+    }
     /**
      * Creates new form listagem
      */
@@ -28,6 +55,7 @@ public class listagem extends javax.swing.JInternalFrame {
     }
     public listagem() {
         initComponents();
+        preencherCombo();
     }
     
     
@@ -41,13 +69,12 @@ public class listagem extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cbProduto = new javax.swing.JComboBox<>();
+        cmbBolos = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtPreco = new javax.swing.JTextField();
+        txtIngrediente = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Listagem de Produtos");
@@ -56,25 +83,25 @@ public class listagem extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(800, 470));
         setVisible(false);
 
-        cbProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbBolos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBolosActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Produto");
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList1);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Ingredientes");
 
         jLabel3.setText("Preço");
 
-        jTextField1.setEditable(false);
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPreco.setEditable(false);
+        txtPreco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txtIngrediente.setEditable(false);
+        txtIngrediente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,17 +110,17 @@ public class listagem extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(307, 307, 307)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbProduto, 0, 196, Short.MAX_VALUE)
+                    .addComponent(cmbBolos, 0, 196, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(281, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(269, 269, 269))
+                    .addComponent(txtIngrediente, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(317, 317, 317))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,29 +128,32 @@ public class listagem extends javax.swing.JInternalFrame {
                 .addGap(5, 5, 5)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbBolos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(txtIngrediente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cmbBolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBolosActionPerformed
+        Bolo b = new Bolo();
+    }//GEN-LAST:event_cmbBolosActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbProduto;
+    private javax.swing.JComboBox<String> cmbBolos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtIngrediente;
+    private javax.swing.JTextField txtPreco;
     // End of variables declaration//GEN-END:variables
 }
