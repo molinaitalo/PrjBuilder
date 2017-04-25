@@ -5,6 +5,7 @@
  */
 package janelas;
 
+import javax.swing.JOptionPane;
 import objetos.Bolo;
 import objetos.BoloDiretor;
 
@@ -238,6 +239,7 @@ public class cadastro extends javax.swing.JInternalFrame {
         
         BoloBO boloBo = new BoloBO();
         boloBo.salvar(bolo);
+        JOptionPane.showMessageDialog(null, "Bolo cadastrado!");
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

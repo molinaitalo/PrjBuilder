@@ -91,12 +91,12 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Ingredientes"/>
+        <Property name="text" type="java.lang.String" value="Ingrediente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
+        <Property name="text" type="java.lang.String" value="Pre&#xe7;o Total:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPreco">

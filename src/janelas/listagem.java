@@ -30,13 +30,7 @@ public class listagem extends javax.swing.JInternalFrame {
                 cmbBolos.addItem(b.getDescricao());
             }            
         
-       /* else
-        {
-            cmbDescricao.removeAllItems();
-            LimparCampos();
-            
-        }
-            */
+      
     }
     /**
      * Creates new form listagem
@@ -93,9 +87,9 @@ public class listagem extends javax.swing.JInternalFrame {
         jLabel1.setText("Produto");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Ingredientes");
+        jLabel2.setText("Ingrediente:");
 
-        jLabel3.setText("Preço");
+        jLabel3.setText("Preço Total:");
 
         txtPreco.setEditable(false);
         txtPreco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -144,10 +138,20 @@ public class listagem extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbBolosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBolosActionPerformed
-        Bolo b = new Bolo();
+       preencherCampo();
     }//GEN-LAST:event_cmbBolosActionPerformed
 
-
+    public void preencherCampo()
+    {
+         int index = cmbBolos.getSelectedIndex();
+        if(index!=-1)
+        {
+            Bolo b = new Bolo();
+            b = lstB.get(index);
+            txtPreco.setText(String.valueOf(b.getPrecoBolo()));
+            txtIngrediente.setText(b.getIngrediente());
+    }
+ }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbBolos;
     private javax.swing.JLabel jLabel1;
